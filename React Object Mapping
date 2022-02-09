@@ -1,0 +1,50 @@
+ #Object
+ const category={
+   technology:'Technology',
+   science:'Science',
+   business:'Business'
+ }
+ 
+ #Mapping
+const TestCategory=(props)=>{
+  const {cateitem}=props.cateitem
+  return (
+    <div>{
+     category && Object.keys(category).map((item)=>{
+       
+
+      if(cateitem===item){
+        return(
+          <button className=''>
+           {category[item]}
+          </button>
+        )
+      }
+      return(
+        <button className='btn btn-success'>
+           {category[item]}
+        </button>
+      )
+     }
+      
+     )}
+     
+     
+     </div>
+  )
+}
+  
+ 
+ 
+
+ #Render
+ 
+ export class Test extends Component {
+   render() {
+     return (
+      <TestCategory cateitem={category.technology} />
+     )
+   }
+ }
+ 
+ export default Test
